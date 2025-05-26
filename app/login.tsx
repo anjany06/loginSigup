@@ -1,121 +1,31 @@
-import { useRouter } from "expo-router";
-import React, { useEffect, useState } from "react";
-import { Image, ScrollView, TextInput, View } from "react-native";
-import MyButton from "./components/MyButton";
+import React from "react";
+import { ScrollView, View } from "react-native";
 
 const Login = () => {
-  const [value, setValue] = useState({
-    value1: "",
-    value2: "",
-  });
-
-  useEffect(() => {
-    console.log("Login Page Rendered");
-  }, []);
-
-  const router = useRouter();
-  const onLogin = () => {
-    // console.log(Number(email) + Number(password));
-    console.log("Email: ", value?.value1, "Password: ", value?.value2);
-  };
   return (
-    <ScrollView style={{ flex: 1 }}>
-      <Image
-        source={require("@/assets/images/login.jpg")}
-        style={{
-          width: "100%",
-          height: 400,
-        }}
-        resizeMode="cover"
-      />
-      <View
-        style={{
-          padding: 20,
-          gap: 20,
-        }}
-      >
-        <TextInput
-          placeholder="Enter Your Email"
-          style={{
-            borderWidth: 1,
-            height: 50,
-            paddingHorizontal: 20,
-            borderRadius: 10,
-          }}
-          onChangeText={(e) => setValue((prev) => ({ ...prev, value1: e }))}
-        />
-        <TextInput
-          placeholder="Enter Your Password"
-          style={{
-            borderWidth: 1,
-            height: 50,
-            paddingHorizontal: 20,
-            borderRadius: 10,
-          }}
-          onChangeText={(e) => setValue((prev) => ({ ...prev, value2: e }))}
-        />
-        <TextInput
-          placeholder="Enter Your Password"
-          style={{
-            borderWidth: 1,
-            height: 50,
-            paddingHorizontal: 20,
-            borderRadius: 10,
-          }}
-          onChangeText={(e) => setValue((prev) => ({ ...prev, value2: e }))}
-        />
-        <TextInput
-          placeholder="Enter Your Password"
-          style={{
-            borderWidth: 1,
-            height: 50,
-            paddingHorizontal: 20,
-            borderRadius: 10,
-          }}
-          onChangeText={(e) => setValue((prev) => ({ ...prev, value2: e }))}
-        />
-        <TextInput
-          placeholder="Enter Your Password"
-          style={{
-            borderWidth: 1,
-            height: 50,
-            paddingHorizontal: 20,
-            borderRadius: 10,
-          }}
-          onChangeText={(e) => setValue((prev) => ({ ...prev, value2: e }))}
-        />
-        <TextInput
-          placeholder="Enter Your Password"
-          style={{
-            borderWidth: 1,
-            height: 50,
-            paddingHorizontal: 20,
-            borderRadius: 10,
-          }}
-          onChangeText={(e) => setValue((prev) => ({ ...prev, value2: e }))}
-        />
-        <TextInput
-          placeholder="Enter Your Password"
-          style={{
-            borderWidth: 1,
-            height: 50,
-            paddingHorizontal: 20,
-            borderRadius: 10,
-          }}
-          onChangeText={(e) => setValue((prev) => ({ ...prev, value2: e }))}
-        />
-        <TextInput
-          placeholder="Enter Your Password"
-          style={{
-            borderWidth: 1,
-            height: 50,
-            paddingHorizontal: 20,
-            borderRadius: 10,
-          }}
-          onChangeText={(e) => setValue((prev) => ({ ...prev, value2: e }))}
-        />
-        <MyButton title={"Login"} onPress={onLogin} />
-      </View>
+    <ScrollView
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      contentContainerStyle={{ marginTop: 40, padding: 20 }}
+    >
+      {[1, 2, 3, 4, 5, 6, 7, 8, 5, 5, 5, 55, 5, 5, 5, 5, 5, 5, 5].map(
+        (item) => {
+          return (
+            <View
+              key={item}
+              style={{
+                width: 100,
+                height: 100,
+                backgroundColor: "orange",
+                margin: 10,
+                borderRadius: 10,
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            ></View>
+          );
+        }
+      )}
     </ScrollView>
   );
 };
