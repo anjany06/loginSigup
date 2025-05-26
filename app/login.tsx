@@ -1,15 +1,25 @@
 import { useRouter } from "expo-router";
-import React from "react";
-import { Image, TextInput, View } from "react-native";
+import React, { useEffect, useState } from "react";
+import { Image, ScrollView, TextInput, View } from "react-native";
 import MyButton from "./components/MyButton";
 
 const Login = () => {
+  const [value, setValue] = useState({
+    value1: "",
+    value2: "",
+  });
+
+  useEffect(() => {
+    console.log("Login Page Rendered");
+  }, []);
+
   const router = useRouter();
   const onLogin = () => {
-    router.navigate("/signup");
+    // console.log(Number(email) + Number(password));
+    console.log("Email: ", value?.value1, "Password: ", value?.value2);
   };
   return (
-    <View style={{ flex: 1 }}>
+    <ScrollView style={{ flex: 1 }}>
       <Image
         source={require("@/assets/images/login.jpg")}
         style={{
@@ -32,7 +42,7 @@ const Login = () => {
             paddingHorizontal: 20,
             borderRadius: 10,
           }}
-          // onChangeText={(e) => console.log(e)}
+          onChangeText={(e) => setValue((prev) => ({ ...prev, value1: e }))}
         />
         <TextInput
           placeholder="Enter Your Password"
@@ -42,10 +52,71 @@ const Login = () => {
             paddingHorizontal: 20,
             borderRadius: 10,
           }}
+          onChangeText={(e) => setValue((prev) => ({ ...prev, value2: e }))}
+        />
+        <TextInput
+          placeholder="Enter Your Password"
+          style={{
+            borderWidth: 1,
+            height: 50,
+            paddingHorizontal: 20,
+            borderRadius: 10,
+          }}
+          onChangeText={(e) => setValue((prev) => ({ ...prev, value2: e }))}
+        />
+        <TextInput
+          placeholder="Enter Your Password"
+          style={{
+            borderWidth: 1,
+            height: 50,
+            paddingHorizontal: 20,
+            borderRadius: 10,
+          }}
+          onChangeText={(e) => setValue((prev) => ({ ...prev, value2: e }))}
+        />
+        <TextInput
+          placeholder="Enter Your Password"
+          style={{
+            borderWidth: 1,
+            height: 50,
+            paddingHorizontal: 20,
+            borderRadius: 10,
+          }}
+          onChangeText={(e) => setValue((prev) => ({ ...prev, value2: e }))}
+        />
+        <TextInput
+          placeholder="Enter Your Password"
+          style={{
+            borderWidth: 1,
+            height: 50,
+            paddingHorizontal: 20,
+            borderRadius: 10,
+          }}
+          onChangeText={(e) => setValue((prev) => ({ ...prev, value2: e }))}
+        />
+        <TextInput
+          placeholder="Enter Your Password"
+          style={{
+            borderWidth: 1,
+            height: 50,
+            paddingHorizontal: 20,
+            borderRadius: 10,
+          }}
+          onChangeText={(e) => setValue((prev) => ({ ...prev, value2: e }))}
+        />
+        <TextInput
+          placeholder="Enter Your Password"
+          style={{
+            borderWidth: 1,
+            height: 50,
+            paddingHorizontal: 20,
+            borderRadius: 10,
+          }}
+          onChangeText={(e) => setValue((prev) => ({ ...prev, value2: e }))}
         />
         <MyButton title={"Login"} onPress={onLogin} />
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
